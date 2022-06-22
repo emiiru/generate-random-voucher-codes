@@ -13,4 +13,13 @@ use App\Http\Controllers\VoucherCodeController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 Route::get('/generate', [VoucherCodeController::class, 'generateCode']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
